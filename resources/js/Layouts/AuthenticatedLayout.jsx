@@ -30,6 +30,24 @@ export default function AuthenticatedLayout({ header, children }) {
                                 >
                                     Dashboard
                                 </NavLink>
+                                <NavLink
+                                    href={route('menu-items.index')}
+                                    active={route().current('menu-items.index')}
+                                >
+                                    Menu Items
+                                </NavLink>
+                                <NavLink
+                                    href={route('reservations.index')}
+                                    active={route().current('reservations.index')}
+                                >
+                                    Reservations
+                                </NavLink>
+                                <NavLink
+                                    href={route('orders.index')}
+                                    active={route().current('orders.index')}
+                                >
+                                    Orders
+                                </NavLink>
                             </div>
                         </div>
 
@@ -170,7 +188,7 @@ export default function AuthenticatedLayout({ header, children }) {
                 </header>
             )}
 
-            <main>{children}</main>
+            <main className='flex flex-col m-8 space-y-5'>{children}</main>
         </div>
     );
 }
